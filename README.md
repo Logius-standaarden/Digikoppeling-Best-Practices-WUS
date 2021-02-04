@@ -1,3 +1,4 @@
-# Template-Standaard
+# Digikoppeling Best Practices WUS
 
-https://logius-standaarden.github.io/Template-Repository/
+- html: https://logius-standaarden.github.io/Digikoppeling-Best-Practices-WUS/
+- markdown: [04_content.md](04_content.md)/

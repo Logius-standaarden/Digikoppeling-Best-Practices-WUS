@@ -1,3 +1,50 @@
+Colofon
+
+| Projectnaam  | Digikoppeling                                                                                                                        |
+|--------------|--------------------------------------------------------------------------------------------------------------------------------------|
+| Versienummer | 1.10                                                                                                                                 |
+| Organisatie  | Servicecentrum Logius Postbus 96810 \| 2509 JE Den Haag T 0900 555 4555 [servicecentrum@logius.nl](mailto:servicecentrum@logius.nl)  |
+|              |                                                                                                                                      |
+| Bijlage(n)   | 0                                                                                                                                    |
+
+Inhoud
+
+[Colofon	2](#_Toc496180720)
+
+[Inhoud	3](#_Toc496180721)
+
+[1	Inleiding	4](#_Toc496180722)
+
+>   [1.1	Doel en doelgroep	4](#_Toc496180723)
+
+>   [1.2	Opbouw Digikoppeling documentatie	4](#_Toc496180724)
+
+>   [1.3	Digikoppeling	4](#_Toc496180725)
+
+>   [1.3.1	Doel en scope van Digikoppeling	4](#_Toc496180726)
+
+>   [1.3.2	Uitwisseling binnen Digikoppeling	5](#_Toc496180727)
+
+>   [1.4	Opbouw van dit document	5](#_Toc496180728)
+
+>   [1.5	Gehanteerde terminologie: Digikoppeling Glossary	5](#_Toc496180729)
+
+[2	Werkwijze/Aanbevelingen/Best Practices	6](#_Toc496180730)
+
+>   [2.1	Servicedefinities	6](#_Toc496180731)
+
+>   [2.2	Foutafhandeling	9](#_Toc496180732)
+
+>   [2.3	WS-Addressing	11](#_Toc496180733)
+
+>   [2.4	WS-Policies	12](#_Toc496180734)
+
+[3	Bijlage 1 – Lijst van technische foutmeldingen	14](#_Toc496180735)
+
+>   [3.1	Categorieën	14](#_Toc496180736)
+
+>   [3.2	Codes	14](#_Toc496180737)
+
 # Inleiding
 
 ## Doel en doelgroep
@@ -10,7 +57,7 @@ Het document is bestemd voor ontwikkelaars van webservices, die Digikoppeling to
 
 Digikoppeling is beschreven in een set van documenten. Deze set is als volgt opgebouwd:
 
-![Opbouw documentatie Digikoppeling](media/DK_Specificatie_structuur.png "Opbouw documentatie Digikoppeling")
+figuur 1 – Opbouw documentatie Digikoppeling
 
 ## Digikoppeling
 
@@ -26,11 +73,11 @@ Digikoppeling biedt de mogelijkheid om op die sterk gestandaardiseerde wijze ber
 
 De uitwisseling tussen service providers en - requesters is in drie lagen opgedeeld:
 
-- Inhoud: deze laag bevat afspraken over de inhoud van het uit te wisselen bericht, dus de structuur, semantiek en waardebereiken . Digikoppeling houdt zich niet met de inhoud bezig, “heeft geen boodschap aan de boodschap”.
+-   Inhoud: deze laag bevat afspraken over de inhoud van het uit te wisselen bericht, dus de structuur, semantiek en waardebereiken . Digikoppeling houdt zich niet met de inhoud bezig, “heeft geen boodschap aan de boodschap”.
 
-- Logistiek: op deze laag bevinden zich de afspraken betreffende transportprotocollen (HTTP), messaging (SOAP), adressering, beveiliging (authenticatie en encryptie) en betrouwbaarheid. Dit is de laag van Digikoppeling.
+-   Logistiek: op deze laag bevinden zich de afspraken betreffende transportprotocollen (HTTP), messaging (SOAP), adressering, beveiliging (authenticatie en encryptie) en betrouwbaarheid. Dit is de laag van Digikoppeling.
 
-- Transport: deze laag verzorgt het daadwerkelijke transport van het bericht.
+-   Transport: deze laag verzorgt het daadwerkelijke transport van het bericht.
 
 Digikoppeling richt zich uitsluitend op de logistieke laag. Deze afspraken komen in de koppelvlakstandaarden en andere voorzieningen.
 
@@ -62,7 +109,7 @@ Onderstaande tekst is een citaat uit de WSDL 1.1 Standaard. Het vormt een door D
 
 \* Het voorbeeld waar deze tekst van de WSDL 1.1 standaard naar verwijst wordt is niet in overeenstemming met het Digikoppeling Koppelvlakstandaard WUS profiel (zie voor details CRF 12). Om een indruk te krijgen van de opdeling (authoring style) van een WSDL wordt verwezen naar de berichtvoorbeelden. De voorbeelden van berichten zijn gepubliceerd op de Logius website. Voorbeelden van WSDL’s zijn beschikbaar als onderdeel van de Digikoppeling Compliance Voorziening.
 
-Voor de specificatie van zaken die buiten het bereik van de WSDL vallen (TLS, WS-Security) wordt aanbevolen om in de WSDL van een service “documentation elements” (&lt;(wsdl:documentation\&gt; of &lt;!-- xxx --\&gt;) op te nemen die de eisen ten aanzien van metadata verwoorden, of een verwijzing naar betreffende documenten bevat.
+Voor de specificatie van zaken die buiten het bereik van de WSDL vallen (TLS, WS-Security) wordt aanbevolen om in de WSDL van een service “documentation elements” (\<wsdl:documentation\> of \<!-- xxx --\>) op te nemen die de eisen ten aanzien van metadata verwoorden, of een verwijzing naar betreffende documenten bevat.
 
 **Karakterset en codering**
 
@@ -108,65 +155,93 @@ Aan de locatie (uri) van de service is daardoor te zien of het om een productie-
 
 **XSD**
 
-Gebruik van document/literal wrapped style. In Digikoppeling Koppelvlakstandaard WUS staat de bij voorschrift WW003 dat bij de document literal style de body maar 1 element mag bevatten. Het wordt sterk aangeraden dat dit element de operatie naam bevat voor een bepaald bericht. Deze wordt dus door de xsd beschreven en bevat een beschrijving van de payload. Door deze methode te gebruiken wordt de interoperabiliteit verhoogd, met name tussen Microsoft en andere omgevingen. (zie [http://www-128.ibm.com/developerworks/webservices/library/ws-whichwsdl](http://www-128.ibm.com/developerworks/webservices/library/ws-whichwsdl))
+Gebruik van document/literal wrapped style. In Digikoppeling Koppelvlakstandaard WUS staat de bij voorschrift WW003 dat bij de document literal style de body maar 1 element mag bevatten. Het wordt sterk aangeraden dat dit element de operatie naam bevat voor een bepaald bericht. Deze wordt dus door de xsd beschreven en bevat een beschrijving van de payload. Door deze methode te gebruiken wordt de interoperabiliteit verhoogd, met name tussen Microsoft en andere omgevingen. (zie <http://www-128.ibm.com/developerworks/webservices/library/ws-whichwsdl/>)
 
 Wsdl definition
 
-```XML
-...
-<types>
-	<schema>
-		<element name="myMethod">
-			<complexType>
-				<sequence>
-					<element name="x" type="xsd:int" />
-					<element name="y" type="xsd:float" />
-				</sequence>
-			</complexType>
-		</element>
-		<element name="myMethodResponse">
-			<complexType />
-		</element>
-	</schema>
-</types>
-<message name="myMethodRequest">
-	<part name="parameters" element="myMethod" />
-</message>
-<message name="empty">
-	<part name="parameters" element="myMethodResponse" />
-</message>
-<portType name="PT">
-	<operation name="myMethod">
-		<input message="myMethodRequest" />
-		<output message="empty" />
-	</operation>
-</portType>
-...
-```
+…
+
+\<types\>
+
+\<schema\>
+
+\<element name="myMethod"\>
+
+\<complexType\>
+
+\<sequence\>
+
+\<element name="x" type="xsd:int"/\>
+
+\<element name="y" type="xsd:float"/\>
+
+\</sequence\>
+
+\</complexType\>
+
+\</element\>
+
+\<element name="myMethodResponse"\>
+
+\<complexType/\>
+
+\</element\>
+
+\</schema\>
+
+\</types\>
+
+\<message name="myMethodRequest"\>
+
+\<part name="parameters" element="myMethod"/\>
+
+\</message\>
+
+\<message name="empty"\>
+
+\<part name="parameters" element="myMethodResponse"/\>
+
+\</message\>
+
+\<portType name="PT"\>
+
+\<operation name="myMethod"\>
+
+\<input message="myMethodRequest"/\>
+
+\<output message="empty"/\>
+
+\</operation\>
+
+\</portType\>
+
+…
 
 bericht:
 
-```XML
-...
-<envelope>
-	<payloadbody>
-		<myMethod>
-			<x>
-				5
-			</x>
-			<y>
-				5.0
-			</y>
-		</myMethod>
-	</payloadbody>
-</envelope>
-...
-```
+…
 
+soap:envelope\>
+
+\<soap:body\>
+
+\<myMethod\>
+
+\<x\>5\</x\>
+
+\<y\>5.0\</y\>
+
+\</myMethod\>
+
+\</soap:body\>
+
+\</soap:envelope\>
+
+….
 
 **Namespaces**
 
-Met betrekking tot het verkrijgen van eenduidigheid in de WSDL bestanden, wordt sterk aangeraden dat xml namespace prefixen volgens de WSDL 1.1 specificatie gebruikt worden. ([https://www.w3.org/TR/wsdl/#notation](http://www.w3.org/TR/wsdlhttps://www.w3.org/TR/wsdl/#notation)).
+Met betrekking tot het verkrijgen van eenduidigheid in de WSDL bestanden, wordt sterk aangeraden dat xml namespace prefixen volgens de WSDL 1.1 specificatie gebruikt worden. (http://www.w3.org/TR/wsdl)“1.2 Notational Conventions”).
 
 Het heeft de voorkeur dat een namespace wordt opgebouwd op basis van de domeinnaam van de web service.
 
@@ -178,9 +253,9 @@ Contract First vs Contract Last
 
 Het ontwikkelen van webservices kan grofweg ingedeeld worden in twee categorieën, namelijk:
 
-- contract first
+-   contract first
 
-- contract last
+-   contract last
 
 Met ‘contract’ wordt gewezen op het WSDL contract dat de webservice definieert. Nagenoeg alle webservice toolkits ondersteunen beide manieren van ontwikkeling.
 
@@ -242,9 +317,9 @@ Bijvoorbeeld in het scenario dat een bericht wordt verstuurd door een andere int
 
 Daarnaast zou het formaat van een messageID ook gebruikt kunnen worden om naast een unieke waarde ook gedeeltelijk aan te vullen met een logische waarde. Indien bijvoorbeeld gewerkt wordt met een interactie waarbij meerdere berichten uitgewisseld worden voor 1 business conversatie, kan het correleren versimpeld worden door een conversationID te verwerken in de messageID.
 
-Voorkeur is om consistentie in de opbouw van de messageID aan te houden. De volgende opbouw heeft de voorkeur: “CUSTOM@[UUID@URI](mailto:UUID@URI) “ of “CUSTOM@[GUID@URI”](mailto:UUID@URI). UUID of GUID volgens [http://www.ietf.org/rfc/rfc4122.txt](http://www.ietf.org/rfc/rfc4122.txt)
+Voorkeur is om consistentie in de opbouw van de messageID aan te houden. De volgende opbouw heeft de voorkeur: “CUSTOM@[UUID@URI](mailto:UUID@URI) “ of “CUSTOM@[GUID@URI”](mailto:UUID@URI). UUID of GUID volgens <http://www.ietf.org/rfc/rfc4122.txt>
 
-URI is een anyURI volgens [http://www.w3.org/2001/XMLSchema](http://www.w3.org/2001/XMLSchema)
+URI is een anyURI volgens <http://www.w3.org/2001/XMLSchema>
 
 De URI kan de domeinnaam zijn van Digikoppeling messagehandler of de web service namespace.
 
@@ -256,43 +331,43 @@ Het is geen optie om het TO adres continu te herschrijven bij elke intermediair,
 
 Ter verduidelijking, de volgende sequence diagram:
 
-![Sequence diagram routeren van berichten over meerdere intermediairs](media/sequence_diagram_routering.jpeg "sequence diagram routeren van berichten over meerdere intermediairs" )
+![](media/15274620217462aaa89fab56521dc0f6.jpeg)
 
 Zoals in het diagram getoond wordt, blijft de addressing informatie gelijk tijdens de hele verzending. Indien het bericht ondertekend en versleuteld is, hoeven gateway 1 en gateway 2 het bericht niet te valideren of ontcijferen. Zolang de addressing informatie niet veranderd wordt, is de meegestuurde ‘signature’ nog steeds valide. De gateway componenten lezen enkel de To address uit, om te bepalen waar het bericht naartoe gestuurd moet worden.
 
 **Afhandeling From in combinatie met een proxy/gateway**
 
-Een from adres geeft aan waar het bericht vandaan is gekomen. Dit adres wordt vervolgens gebruikt om te bepalen waar het bericht vandaan is gekomen. In complexe infrastructuur oplossingen waarbij gebruik is gemaakt van een reverse proxy kan dit voor bepaalde complicaties zorgen (zie [http://en.wikipedia.org/wiki/Reverse_proxy](http://en.wikipedia.org/wiki/Reverse_proxy)). Een server kan namelijk niet het from adres als endpoint gebruiken omdat deze moet wijzen naar de interne proxy. Extern verkeer dient vaak in dergelijke situaties altijd over de proxy te gaan. Om dit probleem op te lossen dient ook hier gebruik gemaakt te worden van een endpoint mapping functionaliteit.
+Een from adres geeft aan waar het bericht vandaan is gekomen. Dit adres wordt vervolgens gebruikt om te bepalen waar het bericht vandaan is gekomen. In complexe infrastructuur oplossingen waarbij gebruik is gemaakt van een reverse proxy kan dit voor bepaalde complicaties zorgen (zie <http://en.wikipedia.org/wiki/Reverse_proxy>). Een server kan namelijk niet het from adres als endpoint gebruiken omdat deze moet wijzen naar de interne proxy. Extern verkeer dient vaak in dergelijke situaties altijd over de proxy te gaan. Om dit probleem op te lossen dient ook hier gebruik gemaakt te worden van een endpoint mapping functionalitet.
 
 ## WS-Policies
 
-WS-Policies is onderdeel van de WS-\* specificaties en is sinds 2007 is versie 1.5 final. De doelstelling van WS-Policies is om een framework aan te bieden waarmee domein specifieke definities in een WSDL opgenomen kunnen worden. Gebaseerd op deze framework kunnen specifieke WS-\* standaarden extensies definiëren op een eenduidig manier. De extensies worden dan in de policy elementen toegevoegd zodat ze vast gelegd zijn in de WSDL. Frameworks/toolkits kunnen tijdens het inlezen van de WSDL dan al bepalen hoe met de policy elementen omgegaan moet worden en kunnen hiervoor al de voorbereidingen treffen. Bijvoorbeeld: indien op WSDL niveau al aangegeven is dat een bericht gesigned moet worden, kan een framework zoals Apache CXF al de benodigde interceptor registreren die het signing proces afhandelt. Dit gebeurt dan transparant voor de ontwikkelaar.
+WS-Policies is onderdeel van de WS-\* specificaties en is sinds 2007 is versie 1.5 final. De doelstelling van WS-Policies is om een framework aan te bieden waarmee domein specifieke definities in een WSDL opgenomen kunnen worden. Gebaseerd op deze framework kunnen specifieke WS-\* standaarden extensies definiëren op een eenduidig manier. De extensies worden dan in de policy elementen toegevoegd zodat ze vast gelegd zijn in de WSDL. Frameworks/toolkits kunnen tijdens het inlezen van de WSDL dan al bepalen hoe met de policy elementen omgegaan moet worden en kunnen hiervoor al de voorbereidingen treffen. Bijvoorbeeld: indien op WSDL niveau al aangegeven is dat een bericht gesigned moet worden, kan een framework zoals Apache CXF al de benodigde interceptor registreren die het signing proces afhandeld. Dit gebeurt dan transparant voor de ontwikkelaar.
 
 Hoewel de standaarden reeds geruime tijd zijn uitgewerkt en gefinaliseerd, is in de praktijk de implementatie ondersteuning nog wisselvallig. Hierdoor is gekozen om het gebruik van policies niet binnen de koppelvlakstandaard op te nemen maar optioneel te houden. De meerwaarde van het gebruik van policies is daarentegen dusdanig evident dat het binnen de best practices is opgenomen.
 
-Het gebruik van policies kunnen verschillende zaken zowel versimpelen als verduidelijken in de ontwikkelfase maar zijn niet noodzakelijk om ingezet te worden. In de praktijk blijkt wel dat zaken als signing en encryption zonder policies tijdens het ontwikkelen voor de nodige complexiteit zorgt. Uiteraard is het onderhouden van meerdere WSDL varianten voor dezelfde service niet wenselijk. Daarentegen kan de impact daarvan beperkt worden door te werken met een externe policy file dat in de WSDL wordt geïmporteerd en vervolgens met policy references aan specifieke methodes te koppelen. Door de policies extern te houden, is het zelfs mogelijk om verschillende policy varianten te maken indien een veel gebruikte framework een policy niet interoperabel ondersteund. De kans op implementatie fouten zou hiermee verlaagd kunnen worden wat zal resulteren in een sneller adoptieproces. De baten die hiermee behaald kunnen worden zijn hoogstwaarschijnlijk hoger dan de kosten die ermee gemoeid zijn.
+Het gebruik van policies kunnen verschillende zaken zowel versimpelen als verduidelijken in de ontwikkelfase maar zijn niet noodzakelijk om ingezet te worden. In de praktijk blijkt wel dat zaken als signing en encryption zonder policies tijdens het ontwikkelen voor de nodige complexiteit zorgt. Uiteraard is het onderhouden van meerdere WSDL varianten voor dezelfde service niet wenselijk. Daarentegen kan de impact daarvan beperkt worden door te werken met een externe policy file dat in de WSDL wordt geimporteerd en vervolgens met policy references aan specifieke methodes te koppelen. Door de policies extern te houden, is het zelfs mogelijk om verschillende policy varianten te maken indien een veel gebruikte framework een policy niet interoperabel ondersteund. De kans op implementatie fouten zou hiermee verlaagd kunnen worden wat zal resulteren in een sneller adoptieproces. De baten die hiermee behaald kunnen worden zijn hoogstwaarschijnlijk hoger dan de kosten die ermee gemoeid zijn.
 
 Voorbeeld: Partij A besluit om een melding dienst aan te bieden waar andere partijen zich kunnen abonneren en meldingen kunnen ontvangen. Dit houdt in dat alle partijen de service moeten implementeren om de meldingen te kunnen ontvangen. Indien er 1000 verschillende partijen zijn waarbij het bekend is dat 50% gebruik maakt van Oracle Webcenter technologie en 30% gebruik maakt van Microsoft technologie. Dan zou de case om een policy attachment aan te bieden voor beide technologieën dat getest is op een correcte werking zeer goed te maken zijn. Door het inlezen van de WSDL met de bijbehorende policy attachments staan alle webservice instellingen zoals signing onderdelen gelijk goed.
 
-# Technische foutmeldingen 
+# Bijlage 1 – Lijst van technische foutmeldingen 
 
 ## Categorieën
 
 Bij gegevensuitwisseling kunnen er fouten optreden door verschillende oorzaken. Fouten kunnen in één van de volgende categorieën ingedeeld worden:
 
-1. syntax fouten, hebben betrekking op de structuur van de berichten (XSD) en standaarden zoals WSA en SOAP
+1.  syntax fouten, hebben betrekking op de structuur van de berichten (XSD) en standaarden zoals WSA en SOAP
 
-1. inhoudelijke fouten, hebben betrekking op inhoudelijke verwerking en zijn context/domein of sector specifiek en worden niet binnen DK gestandaardiseerd
+2.  inhoudelijke fouten, hebben betrekking op inhoudelijke verwerking en zijn context/domein of sector specifiek en worden niet binnen DK gestandaardiseerd
 
-1. protocolfouten, hebben betrekking op TLS of HTTP
+3.  protocolfouten, hebben betrekking op TLS of HTTP
 
-1. fouten doordat een service niet (onvoldoende QoS) beschikbaar is, waaronder ook time-out en autorisatie problemen/fouten.
+4.  fouten doordat een service niet (onvoldoende QoS) beschikbaar is, waaronder ook time-out en autorisatie problemen/fouten.
 
 Per categorie kan op hoofdlijnen een procedure voor de foutafhandeling gedefinieerd worden.
 
-5. bij syntax fouten dient zo mogelijk aangegeven te worden welk element fout is (zoals in foutmeldingen 0005 t/m 0008 aangegeven staat)
+1.  bij syntax fouten dient zo mogelijk aangegeven te worden welk element fout is (zoals in foutmeldingen 0005 t/m 0008 aangegeven staat)
 
-6. Zo mogelijk aangeven waarom. Bij inhoudelijke fouten aangeven dat het bericht vanwege inconsistentie niet verwerkt kan worden. (dit is eigenlijk geen transport/koppelvlak probleem, maar veeleer een business probleem met een bijbehorende afhandelingsprocedure, vgl. de terugmelding in het stelsel).
+2.  Zo mogelijk aangeven waarom. Bij inhoudelijke fouten aangeven dat het bericht vanwege inconsistentie niet verwerkt kan worden. (dit is eigenlijk geen transport/koppelvlak probleem , maar veeleer een business probleem met een bijbehorende afhandelingsprocedure, vgl. de terugmelding in het stelsel).
 
 ## Codes
 
