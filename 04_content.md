@@ -48,11 +48,11 @@ Voor de definities die binnen het Digikoppeling project gehanteerd worden, zie d
 
 # Werkwijze/Aanbevelingen/Best Practices
 
-## Servicedefinities 
+## Servicedefinities
 
 Deze paragraaf bevat de aanbevelingen t.a.v. het omgaan met servicedefinities.
 
-**WSDL**
+### WSDL
 
 In WSDL 1.1 is een Authoring Style advies (zie hieronder) opgenomen: “separate the definitions in three documents: data type definitions, abstract definitions, and specific service bindings”. Dit advies, met name het apart beschrijven van de “specific service bindings” (WSDL onderdelen Binding en Service) wordt overgenomen.
 
@@ -66,13 +66,13 @@ Onderstaande tekst is een citaat uit de WSDL 1.1 Standaard. Het vormt een door D
 
 Voor de specificatie van zaken die buiten het bereik van de WSDL vallen (TLS, WS-Security) wordt aanbevolen om in de WSDL van een service “documentation elements” (&lt;(wsdl:documentation\&gt; of &lt;!-- xxx --\&gt;) op te nemen die de eisen ten aanzien van metadata verwoorden, of een verwijzing naar betreffende documenten bevat.
 
-**Karakterset en codering**
+### Karakterset en codering
 
 Voor communicatie binnen het Digikoppeling WUS kanaal wordt de UCS karakterset (ISO/IEC 10646) gebruikt. Deze karakterset omvat (is superset van) de set Unicode, Latin (ISO/IEC 8859-x) en de GBA karakterset.
 
 Bij berichtenverkeer speelt de gebruikte karakterset een belangrijke rol. Een serviceafnemer kan in de vraagaanroep karakters gebruikt hebben die niet door de serviceaanbieder ondersteund worden. Voor goede communicatie is het dus belangrijk dat hiervoor afspraken gelden. UCS is de meest uitgebreide karakterset. Toepassen van UTF-8 zorgt er voor dat efficiënt omgegaan wordt met het aantal bytes in het bericht.
 
-**Versie aanduiding**
+### Versie aanduiding
 
 Er zijn een aantal elementen waaraan een versie aanduiding moet worden toegevoegd. Dit zijn:
 
@@ -108,7 +108,7 @@ Voor het onderscheid tussen test- en productieservices heeft het de voorkeur dat
 
 Aan de locatie (uri) van de service is daardoor te zien of het om een productie- of een testservice gaat.
 
-**XSD**
+### XSD
 
 Gebruik van document/literal wrapped style. In Digikoppeling Koppelvlakstandaard WUS staat de bij voorschrift WW003 dat bij de document literal style de body maar 1 element mag bevatten. Het wordt sterk aangeraden dat dit element de operatie naam bevat voor een bepaald bericht. Deze wordt dus door de xsd beschreven en bevat een beschrijving van de payload. Door deze methode te gebruiken wordt de interoperabiliteit verhoogd, met name tussen Microsoft en andere omgevingen. (zie [http://www-128.ibm.com/developerworks/webservices/library/ws-whichwsdl](http://www-128.ibm.com/developerworks/webservices/library/ws-whichwsdl))
 
@@ -166,17 +166,17 @@ bericht:
 ```
 
 
-**Namespaces**
+### Namespaces
 
 Met betrekking tot het verkrijgen van eenduidigheid in de WSDL bestanden, wordt sterk aangeraden dat xml namespace prefixen volgens de WSDL 1.1 specificatie gebruikt worden. ([https://www.w3.org/TR/wsdl/#notation](http://www.w3.org/TR/wsdlhttps://www.w3.org/TR/wsdl/#notation)).
 
 Het heeft de voorkeur dat een namespace wordt opgebouwd op basis van de domeinnaam van de web service.
 
-**Naamgeving conventies**
+### Naamgeving conventies
 
 Over het algemeen moet de service naam een goede weerspiegeling zijn van de context waarin de service wordt gebruikt. De operatienamen die door deze service ondersteund worden, moeten passen binnen de context van de service en overdadige lange tekststrings moet worden voorkomen.
 
-Contract First vs Contract Last
+#### Contract First vs Contract Last
 
 Het ontwikkelen van webservices kan grofweg ingedeeld worden in twee categorieën, namelijk:
 
@@ -200,15 +200,15 @@ Als de oorzaak van de fout bij de service requester ligt, dan dient de foutmeldi
 
 Voor communicatie in het Digikoppeling domein volgens de Koppelvlakstandaard WUS zijn vier verschillende fouttypen te onderkennen: protocolfouten, transportfouten, functionele fouten en technische fouten.
 
-**Protocol- en transportfouten (dus TLS of HTTP fouten).**
+### Protocol- en transportfouten (dus TLS of HTTP fouten)
 
 Protocol- en transportfouten zijn in het algemeen in het protocol gedefinieerd. Wijzigingen daarin - dus aanpassing van standaard software - zijn niet wenselijk. Protocol- en transportfouten worden daarom niet beschreven. De hier beschreven foutmeldingen hebben betrekking op situaties waarin het requestbericht door de web service is ontvangen. Deze kan het echter niet goed verwerken en stuurt daarom een foutmelding terug.
 
-**Functionele fouten**
+### Functionele fouten
 
 Functionele fouten zijn in het kader van Digikoppeling moeilijk te standaardiseren. Deze zullen voor veel organisaties verschillen en ook het communiceren van de foutmelding zal niet altijd eenduidig zijn. Dit is weliswaar iets wat om aandacht vraagt, maar het valt buiten de scope van Digikoppeling.
 
-**Technische fouten**
+### Technische fouten
 
 Voor technische foutmeldingen kan een standaard bericht gedefinieerd worden. In de SOAP specificatie is de SOAP Fault beschreven die je hiervoor goed kunt gebruiken.
 
@@ -234,7 +234,7 @@ Voor een web service in het Digikoppeling domein moeten foutmeldingen gedefiniee
 
 ## WS-Addressing
 
-**Maak gebruik van MessageID**
+### Maak gebruik van MessageID
 
 Binnen WS-Addressing wordt de wsa:MessageID gebruikt om een bericht uniek te definiëren. Dit veld is verplicht binnen de specificatie. De meeste frameworks/toolkits genereren daarom standaard een unieke messageID voor elk bericht indien deze niet is meegegeven door de applicatie.
 
@@ -250,7 +250,7 @@ URI is een anyURI volgens [http://www.w3.org/2001/XMLSchema](http://www.w3.org/2
 
 De URI kan de domeinnaam zijn van Digikoppeling messagehandler of de web service namespace.
 
-**Routeren van berichten over meerdere intermediairs**
+### Routeren van berichten over meerdere intermediairs
 
 WS-Addressing biedt de mogelijkheid om via vaste metadata informatie berichten te voorzien van routeer informatie. Hiervoor gebruikt men met name het ‘TO’ adres. Het is aan te raden om in het TO adres, het beoogde eindadres op te nemen. De endpoint die het bericht ontvangt kan door middel van de waarde van TO adres bepalen hoe het bericht doorgezet wordt. Intern dient de intermediair een mapping tabel bij te houden naar wie een bericht doorgestuurd moet worden afhankelijk van de TO waarde van het bericht. Dit kan dus naar de eindbestemming zijn, of weer naar een andere intermediair. De mapping inrichting dient vooraf afgesproken en ingericht te zijn.
 
@@ -262,7 +262,7 @@ Ter verduidelijking, de volgende sequence diagram:
 
 Zoals in het diagram getoond wordt, blijft de addressing informatie gelijk tijdens de hele verzending. Indien het bericht ondertekend en versleuteld is, hoeven gateway 1 en gateway 2 het bericht niet te valideren of ontcijferen. Zolang de addressing informatie niet veranderd wordt, is de meegestuurde ‘signature’ nog steeds valide. De gateway componenten lezen enkel de To address uit, om te bepalen waar het bericht naartoe gestuurd moet worden.
 
-**Afhandeling From in combinatie met een proxy/gateway**
+### Afhandeling From in combinatie met een proxy/gateway
 
 Een from adres geeft aan waar het bericht vandaan is gekomen. Dit adres wordt vervolgens gebruikt om te bepalen waar het bericht vandaan is gekomen. In complexe infrastructuur oplossingen waarbij gebruik is gemaakt van een reverse proxy kan dit voor bepaalde complicaties zorgen (zie [http://en.wikipedia.org/wiki/Reverse_proxy](http://en.wikipedia.org/wiki/Reverse_proxy)). Een server kan namelijk niet het from adres als endpoint gebruiken omdat deze moet wijzen naar de interne proxy. Extern verkeer dient vaak in dergelijke situaties altijd over de proxy te gaan. Om dit probleem op te lossen dient ook hier gebruik gemaakt te worden van een endpoint mapping functionaliteit.
 
@@ -276,7 +276,7 @@ Het gebruik van policies kunnen verschillende zaken zowel versimpelen als verdui
 
 Voorbeeld: Partij A besluit om een melding dienst aan te bieden waar andere partijen zich kunnen abonneren en meldingen kunnen ontvangen. Dit houdt in dat alle partijen de service moeten implementeren om de meldingen te kunnen ontvangen. Indien er 1000 verschillende partijen zijn waarbij het bekend is dat 50% gebruik maakt van Oracle Webcenter technologie en 30% gebruik maakt van Microsoft technologie. Dan zou de case om een policy attachment aan te bieden voor beide technologieën dat getest is op een correcte werking zeer goed te maken zijn. Door het inlezen van de WSDL met de bijbehorende policy attachments staan alle webservice instellingen zoals signing onderdelen gelijk goed.
 
-# Technische foutmeldingen 
+# Technische foutmeldingen
 
 ## Categorieën
 
