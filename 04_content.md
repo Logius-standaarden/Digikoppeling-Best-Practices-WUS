@@ -10,7 +10,9 @@ Het document is bestemd voor ontwikkelaars van webservices, die Digikoppeling to
 
 Digikoppeling is beschreven in een set van documenten. Deze set is als volgt opgebouwd:
 
-![Opbouw documentatie Digikoppeling](media/DK_Specificatie_structuur.png "Opbouw documentatie Digikoppeling")
+![Overzicht van de onderdelen van de Digikoppeling Standaard, de standaard is onderverdeeld in normatieve en ondersteunende onderdelen](https://publicatie.centrumvoorstandaarden.nl/alg/media/DK_Specificatie_structuur.svg "Opbouw documentatie Digikoppeling")
+
+
 
 ## Digikoppeling
 
