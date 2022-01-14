@@ -120,7 +120,7 @@ bericht:
 
 ### Namespaces
 
-Met betrekking tot het verkrijgen van eenduidigheid in de WSDL bestanden, wordt sterk aangeraden dat xml namespace prefixen volgens de WSDL 1.1 specificatie gebruikt worden. ([https://www.w3.org/TR/wsdl/#notation](http://www.w3.org/TR/wsdlhttps://www.w3.org/TR/wsdl/#notation)).
+Met betrekking tot het verkrijgen van eenduidigheid in de WSDL bestanden, wordt sterk aangeraden dat xml namespace prefixen volgens de WSDL 1.1 specificatie gebruikt worden. ([Web Services Description Language (WSDL) 1.1](https://www.w3.org/TR/wsdl.html)).
 
 Het heeft de voorkeur dat een namespace wordt opgebouwd op basis van de domeinnaam van de web service.
 
