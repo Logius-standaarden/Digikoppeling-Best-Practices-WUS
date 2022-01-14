@@ -1,19 +1,32 @@
+name: Build and Check
 on:
   workflow_dispatch:
 jobs:
   main:
     name: HTML
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: npx respec --localhost --src index.html --out snapshot.html
+      - run: npm install --global respec
+      - run: respec --localhost --src index.html --out snapshot.html
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: static HTML
+  links:
+    needs: main
+    name: Links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: git pull
+      - uses: lycheeverse/lychee-action@v1.2.0
+        with:
+          args: snapshot.html
+          fail: true
   wcag:
     needs: main
     name: WCAG
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - run: git pull
@@ -22,7 +35,7 @@ jobs:
   pdf:
     needs: main
     name: PDF
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - run: |
          sudo apt-get install -y xfonts-base xfonts-75dpi
@@ -32,7 +45,7 @@ jobs:
       - run: git pull
       - run: wkhtmltopdf --enable-local-file-access snapshot.html doc.pdf
       - run: |
-         wget https://raw.githubusercontent.com/Logius-standaarden/Digikoppeling-Algemeen/main/scripts/pdf-name.py
+         wget https://raw.githubusercontent.com/Logius-standaarden/Automatisering/main/scripts/pdf-name.py
          python pdf-name.py
          rm pdf-name.py
       - uses: stefanzweifel/git-auto-commit-action@v4
