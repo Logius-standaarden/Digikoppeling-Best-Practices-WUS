@@ -12,17 +12,6 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: static HTML
-  links:
-    needs: main
-    name: Links
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - run: git pull
-      - uses: lycheeverse/lychee-action@v1.2.0
-        with:
-          args: snapshot.html
-          fail: true
   wcag:
     needs: main
     name: WCAG
