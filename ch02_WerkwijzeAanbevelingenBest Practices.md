@@ -16,7 +16,7 @@ Onderstaande tekst is een citaat uit de WSDL 1.1 Standaard. Het vormt een door D
 
 \* Het voorbeeld waar deze tekst van de WSDL 1.1 standaard naar verwijst wordt is niet in overeenstemming met het Digikoppeling Koppelvlakstandaard WUS profiel (zie voor details CRF 12). Om een indruk te krijgen van de opdeling (authoring style) van een WSDL wordt verwezen naar de berichtvoorbeelden. De voorbeelden van berichten zijn gepubliceerd op de Logius website. Voorbeelden van WSDL’s zijn beschikbaar als onderdeel van de Digikoppeling Compliance Voorziening.
 
-Voor de specificatie van zaken die buiten het bereik van de WSDL vallen (TLS, WS-Security) wordt aanbevolen om in de WSDL van een service “documentation elements” (&lt;(wsdl:documentation\&gt; of &lt;!-- xxx --\&gt;) op te nemen die de eisen ten aanzien van metadata verwoorden, of een verwijzing naar betreffende documenten bevat.
+Voor de specificatie van zaken die buiten het bereik van de WSDL vallen (TLS, WS-Security) wordt aanbevolen om in de WSDL van een service “documentation elements” (`<wsdl:documentation\>` of `<!-- xxx -->`) op te nemen die de eisen ten aanzien van metadata verwoorden, of een verwijzing naar betreffende documenten bevat.
 
 ### Karakterset en codering
 
@@ -46,7 +46,7 @@ Een aantal voorbeelden:
 
 WSDL namespace `http://wus.osb.gbo.overheid.nl/wsdl/compliance-v1`
 
-XSD namespace `http://wus.osb.gbo.overheid.nl/xsd/compliance/xsd/compliance-v1`.
+XSD namespace `http://wus.osb.gbo.overheid.nl/xsd/compliance/xsd/compliance-v1`
 
 Servicenaam `OSBComplianceService_v1`
 
@@ -54,7 +54,7 @@ PortType `IOSBComplianceService_v1`
 
 De aanduiding YYYY/MM slaat ook op een enkelvoudige versie, d.w.z. zonder onderscheid tussen major en minor. Die aanduiding kan dus ook gebruikt worden. Het lijkt echter aan te bevelen om versies van webservices aan te duiden met (oplopende) versienummers, omdat communicatie daarover iets eenduidiger is.
 
-WB005
+### WB005
 
 Voor het onderscheid tussen test- en productieservices heeft het de voorkeur dat deze twee op aparte machines komen met een eigen DNS naam (en dus met verschillende PKI overheid certificaten).
 
