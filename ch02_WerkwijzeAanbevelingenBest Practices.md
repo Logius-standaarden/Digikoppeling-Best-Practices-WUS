@@ -196,7 +196,7 @@ Bijvoorbeeld in het scenario dat een bericht wordt verstuurd door een andere int
 
 Daarnaast zou het formaat van een messageID ook gebruikt kunnen worden om naast een unieke waarde ook gedeeltelijk aan te vullen met een logische waarde. Indien bijvoorbeeld gewerkt wordt met een interactie waarbij meerdere berichten uitgewisseld worden voor 1 business conversatie, kan het correleren versimpeld worden door een conversationID te verwerken in de messageID.
 
-Voorkeur is om consistentie in de opbouw van de messageID aan te houden. De volgende opbouw heeft de voorkeur: “CUSTOM@[UUID@URI](mailto:UUID@URI) “ of “CUSTOM@[GUID@URI”](mailto:UUID@URI). UUID of GUID volgens [http://www.ietf.org/rfc/rfc4122.txt](http://www.ietf.org/rfc/rfc4122.txt)
+Voorkeur is om consistentie in de opbouw van de messageID aan te houden. De volgende opbouw heeft de voorkeur: `CUSTOM@UUID@URI` of `CUSTOM@GUID@URI`. UUID of GUID volgens [http://www.ietf.org/rfc/rfc4122.txt](http://www.ietf.org/rfc/rfc4122.txt)
 
 URI is een anyURI volgens [http://www.w3.org/2001/XMLSchema](http://www.w3.org/2001/XMLSchema)
 
