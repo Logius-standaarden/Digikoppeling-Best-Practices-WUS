@@ -62,7 +62,7 @@ Aan de locatie (uri) van de service is daardoor te zien of het om een productie-
 
 ### XSD
 
-Gebruik van document/literal wrapped style. In Digikoppeling Koppelvlakstandaard WUS staat de bij voorschrift WW003 dat bij de document literal style de body maar 1 element mag bevatten. Het wordt sterk aangeraden dat dit element de operatie naam bevat voor een bepaald bericht. Deze wordt dus door de xsd beschreven en bevat een beschrijving van de payload. Door deze methode te gebruiken wordt de interoperabiliteit verhoogd, met name tussen Microsoft en andere omgevingen. (zie [http://www-128.ibm.com/developerworks/webservices/library/ws-whichwsdl](http://www-128.ibm.com/developerworks/webservices/library/ws-whichwsdl))
+Gebruik van document/literal wrapped style. In Digikoppeling Koppelvlakstandaard WUS staat bij voorschrift WW003 dat bij de document literal style de body maar 1 element mag bevatten. Het wordt sterk aangeraden dat dit element de operatie naam bevat voor een bepaald bericht. Deze wordt dus door de xsd beschreven en bevat een beschrijving van de payload. Door deze methode te gebruiken wordt de interoperabiliteit verhoogd, met name tussen Microsoft en andere omgevingen. (zie [http://www-128.ibm.com/developerworks/webservices/library/ws-whichwsdl](http://www-128.ibm.com/developerworks/webservices/library/ws-whichwsdl))
 
 Wsdl definition
 
