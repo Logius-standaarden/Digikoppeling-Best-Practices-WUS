@@ -85,7 +85,7 @@ De uitwisseling tussen service providers en - requesters is in drie lagen opgede
 
 - Transport: deze laag verzorgt het daadwerkelijke transport van het bericht.
 
-Digikoppeling richt zich uitsluitend op de logistieke laag. Deze afspraken komen in de koppelvlakstandaarden en andere voorzieningen.
+Digikoppeling richt zich uitsluitend op de logistieke laag. Deze afspraken komen in de koppelvlakstandaarden en voorzieningen.
 
 ## Opbouw van dit document
 
