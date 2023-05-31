@@ -6,7 +6,7 @@ Deze paragraaf bevat de aanbevelingen t.a.v. het omgaan met servicedefinities.
 
 ### WSDL
 
-In WSDL 1.1 is een Authoring Style advies (zie hieronder) opgenomen: “separate the definitions in three documents: data type definitions, abstract definitions, and specific service bindings”. Dit advies, met name het apart beschrijven van de “specific service bindings” (WSDL onderdelen Binding en Service) wordt overgenomen.
+In WSDL 1.1 [[wsdl-20010315]] is een Authoring Style advies (zie hieronder) opgenomen: “separate the definitions in three documents: data type definitions, abstract definitions, and specific service bindings”. Dit advies, met name het apart beschrijven van de “specific service bindings” (WSDL onderdelen Binding en Service) wordt overgenomen.
 
 Onderstaande tekst is een citaat uit de WSDL 1.1 Standaard. Het vormt een door Digikoppeling overgenomen best practice bij het schrijven van duidelijke WSDL’s.
 
@@ -14,7 +14,7 @@ Onderstaande tekst is een citaat uit de WSDL 1.1 Standaard. Het vormt een door D
 
 >   *“Door gebruik van het importelement wordt het mogelijk, de diverse elementen van een servicedefinitie te scheiden in afzonderlijke documenten, die dan naar behoefte geïmporteerd kunnen worden. Met behulp van deze techniek kun je duidelijker servicedefinities schrijven, omdat de definities gescheiden worden al naar gelang hun abstractieniveau. Het vergroot ook het vermogen om allerlei soorten servicedefinities nogmaals te gebruiken. Het gevolg is, dat WSDL documenten die op deze manier gestructureerd zijn, gemakkelijker te gebruiken en te onderhouden zijn. In het 2e voorbeeld hieronder is te zien hoe deze manier van schrijven gebruikt wordt om de service in het 1e voorbeeld\* te definiëren. Hier scheiden we de definities in drie documenten: gegevenstype definities, abstracte definities en specifieke service bindings. Natuurlijk is het gebruik van dit mechanisme niet beperkt tot de definities uit het voorbeeld, dat alleen taalelementen gebruikt die in deze specificatie gedefinieerd zijn. Andere typen definities, die op meerdere taalextensies gebaseerd zijn, kunnen op dezelfde manier gecodeerd en hergebruikt worden.”*
 
-\* Het voorbeeld waar deze tekst van de WSDL 1.1 standaard naar verwijst wordt is niet in overeenstemming met het Digikoppeling Koppelvlakstandaard WUS profiel (zie voor details CRF 12). Om een indruk te krijgen van de opdeling (authoring style) van een WSDL wordt verwezen naar de berichtvoorbeelden. De voorbeelden van berichten zijn gepubliceerd op de Logius website. Voorbeelden van WSDL’s zijn beschikbaar als onderdeel van de Digikoppeling Compliance Voorziening.
+\* Het voorbeeld waar deze tekst van de WSDL 1.1 standaard naar verwijst is niet in overeenstemming met het Digikoppeling Koppelvlakstandaard WUS profiel (zie voor details CRF 12). Om een indruk te krijgen van de opdeling (authoring style) van een WSDL wordt verwezen naar de berichtvoorbeelden. De voorbeelden van berichten zijn gepubliceerd op de Logius website. Voorbeelden van WSDL’s zijn beschikbaar als onderdeel van de Digikoppeling Compliance Voorziening.
 
 Voor de specificatie van zaken die buiten het bereik van de WSDL vallen (TLS, WS-Security) wordt aanbevolen om in de WSDL van een service “documentation elements” (`<wsdl:documentation\>` of `<!-- xxx -->`) op te nemen die de eisen ten aanzien van metadata verwoorden, of een verwijzing naar betreffende documenten bevat.
 
@@ -62,7 +62,7 @@ Aan de locatie (uri) van de service is daardoor te zien of het om een productie-
 
 ### XSD
 
-Gebruik van document/literal wrapped style. In Digikoppeling Koppelvlakstandaard WUS staat de bij voorschrift WW003 dat bij de document literal style de body maar 1 element mag bevatten. Het wordt sterk aangeraden dat dit element de operatie naam bevat voor een bepaald bericht. Deze wordt dus door de xsd beschreven en bevat een beschrijving van de payload. Door deze methode te gebruiken wordt de interoperabiliteit verhoogd, met name tussen Microsoft en andere omgevingen. (zie [http://www-128.ibm.com/developerworks/webservices/library/ws-whichwsdl](http://www-128.ibm.com/developerworks/webservices/library/ws-whichwsdl))
+Gebruik van document/literal wrapped style. In Digikoppeling Koppelvlakstandaard WUS staat de bij voorschrift WW003 dat bij de document literal style de body maar 1 element mag bevatten. Het wordt sterk aangeraden dat dit element de operatie naam bevat voor een bepaald bericht. Deze wordt dus door de xsd beschreven en bevat een beschrijving van de payload. Door deze methode te gebruiken wordt de interoperabiliteit verhoogd, met name tussen Microsoft en andere omgevingen.
 
 Wsdl definition
 
@@ -120,13 +120,13 @@ bericht:
 
 ### Namespaces
 
-Met betrekking tot het verkrijgen van eenduidigheid in de WSDL bestanden, wordt sterk aangeraden dat xml namespace prefixen volgens de WSDL 1.1 specificatie gebruikt worden. ([Web Services Description Language (WSDL) 1.1](https://www.w3.org/TR/wsdl.html)).
+Met betrekking tot het verkrijgen van eenduidigheid in de WSDL bestanden, wordt sterk aangeraden dat xml namespace prefixen volgens de WSDL 1.1 specificatie gebruikt worden. [[wsdl-20010315]]
 
 Het heeft de voorkeur dat een namespace wordt opgebouwd op basis van de domeinnaam van de web service.
 
 ### Naamgeving conventies
 
-Over het algemeen moet de service naam een goede weerspiegeling zijn van de context waarin de service wordt gebruikt. De operatienamen die door deze service ondersteund worden, moeten passen binnen de context van de service en overdadige lange tekststrings moet worden voorkomen.
+Over het algemeen moet de service naam een goede weerspiegeling zijn van de context waarin de service wordt gebruikt. De operatienamen die door deze service ondersteund worden, moeten passen binnen de context van de service en overdadige lange tekststrings moeten worden voorkomen.
 
 #### Contract First vs Contract Last
 
@@ -196,7 +196,7 @@ Bijvoorbeeld in het scenario dat een bericht wordt verstuurd door een andere int
 
 Daarnaast zou het formaat van een messageID ook gebruikt kunnen worden om naast een unieke waarde ook gedeeltelijk aan te vullen met een logische waarde. Indien bijvoorbeeld gewerkt wordt met een interactie waarbij meerdere berichten uitgewisseld worden voor 1 business conversatie, kan het correleren versimpeld worden door een conversationID te verwerken in de messageID.
 
-Voorkeur is om consistentie in de opbouw van de messageID aan te houden. De volgende opbouw heeft de voorkeur: `CUSTOM@UUID@URI` of `CUSTOM@GUID@URI`. UUID of GUID volgens [http://www.ietf.org/rfc/rfc4122.txt](http://www.ietf.org/rfc/rfc4122.txt)
+Voorkeur is om consistentie in de opbouw van de messageID aan te houden. De volgende opbouw heeft de voorkeur: `CUSTOM@UUID@URI` of `CUSTOM@GUID@URI`. UUID of GUID volgens [[rfc4122]]
 
 URI is een anyURI volgens [http://www.w3.org/2001/XMLSchema](http://www.w3.org/2001/XMLSchema)
 
@@ -204,27 +204,27 @@ De URI kan de domeinnaam zijn van Digikoppeling messagehandler of de web service
 
 ### Routeren van berichten over meerdere intermediairs
 
-WS-Addressing biedt de mogelijkheid om via vaste metadata informatie berichten te voorzien van routeer informatie. Hiervoor gebruikt men met name het ‘TO’ adres. Het is aan te raden om in het TO adres, het beoogde eindadres op te nemen. De endpoint die het bericht ontvangt kan door middel van de waarde van TO adres bepalen hoe het bericht doorgezet wordt. Intern dient de intermediair een mapping tabel bij te houden naar wie een bericht doorgestuurd moet worden afhankelijk van de TO waarde van het bericht. Dit kan dus naar de eindbestemming zijn, of weer naar een andere intermediair. De mapping inrichting dient vooraf afgesproken en ingericht te zijn.
+WS-Addressing biedt de mogelijkheid om via vaste metadata berichten te voorzien van routeerinformatie. Hiervoor gebruikt men met name het `To` adres. Het is aan te raden om in het `To` adres, het beoogde eindadres op te nemen. De endpoint die het bericht ontvangt kan door middel van de waarde van `To` adres bepalen hoe het bericht doorgezet wordt. Intern dient de intermediair een mapping tabel bij te houden naar wie een bericht doorgestuurd moet worden afhankelijk van de `To` waarde van het bericht. Dit kan dus naar de eindbestemming zijn, of weer naar een andere intermediair. De mapping inrichting dient vooraf afgesproken en ingericht te zijn.
 
-Het is geen optie om het TO adres continu te herschrijven bij elke intermediair, waarin de TO adres de waarde krijgt waar het naar toe moet gaan. Dit is namelijk niet mogelijk, als het bericht ondertekend is want de TO waarde is onderdeel van de ondertekening en mag dus niet gewijzigd worden.
+Het is geen optie om het `To` adres continu te herschrijven bij elke intermediair, waarin de `To` adres de waarde krijgt waar het naar toe moet gaan. Dit is namelijk niet mogelijk als het bericht ondertekend is want de `To` waarde is onderdeel van de ondertekening en mag dus niet gewijzigd worden.
 
 Ter verduidelijking, de volgende sequence diagram:
 
 ![Sequence diagram routeren van berichten over meerdere intermediairs](media/sequence_diagram_routering.jpeg "sequence diagram routeren van berichten over meerdere intermediairs" )
 
-Zoals in het diagram getoond wordt, blijft de addressing informatie gelijk tijdens de hele verzending. Indien het bericht ondertekend en versleuteld is, hoeven gateway 1 en gateway 2 het bericht niet te valideren of ontcijferen. Zolang de addressing informatie niet veranderd wordt, is de meegestuurde ‘signature’ nog steeds valide. De gateway componenten lezen enkel de To address uit, om te bepalen waar het bericht naartoe gestuurd moet worden.
+Zoals in het diagram getoond wordt, blijft de addressing informatie gelijk tijdens de hele verzending. Indien het bericht ondertekend en versleuteld is, hoeven gateway 1 en gateway 2 het bericht niet te valideren of ontcijferen. Zolang de addressing informatie niet veranderd wordt, is de meegestuurde ‘signature’ nog steeds valide. De gateway componenten lezen enkel het `To` adres uit, om te bepalen waar het bericht naartoe gestuurd moet worden.
 
 ### Afhandeling From in combinatie met een proxy/gateway
 
-Een from adres geeft aan waar het bericht vandaan is gekomen. Dit adres wordt vervolgens gebruikt om te bepalen waar het bericht vandaan is gekomen. In complexe infrastructuur oplossingen waarbij gebruik is gemaakt van een reverse proxy kan dit voor bepaalde complicaties zorgen (zie [http://en.wikipedia.org/wiki/Reverse_proxy](http://en.wikipedia.org/wiki/Reverse_proxy)). Een server kan namelijk niet het from adres als endpoint gebruiken omdat deze moet wijzen naar de interne proxy. Extern verkeer dient vaak in dergelijke situaties altijd over de proxy te gaan. Om dit probleem op te lossen dient ook hier gebruik gemaakt te worden van een endpoint mapping functionaliteit.
+Een `From` adres geeft aan waar het bericht vandaan is gekomen. Dit adres wordt vervolgens gebruikt om te bepalen waar het bericht vandaan is gekomen. In complexe infrastructuur oplossingen waarbij gebruik is gemaakt van een reverse proxy kan dit voor bepaalde complicaties zorgen (zie [http://en.wikipedia.org/wiki/Reverse_proxy](http://en.wikipedia.org/wiki/Reverse_proxy)). Een server kan namelijk niet het `From` adres als endpoint gebruiken omdat deze moet wijzen naar de interne proxy. Extern verkeer dient vaak in dergelijke situaties altijd over de proxy te gaan. Om dit probleem op te lossen dient ook hier gebruik gemaakt te worden van een endpoint mapping functionaliteit.
 
 ## WS-Policies
 
-WS-Policies is onderdeel van de WS-\* specificaties en is sinds 2007 is versie 1.5 final. De doelstelling van WS-Policies is om een framework aan te bieden waarmee domein specifieke definities in een WSDL opgenomen kunnen worden. Gebaseerd op deze framework kunnen specifieke WS-\* standaarden extensies definiëren op een eenduidig manier. De extensies worden dan in de policy elementen toegevoegd zodat ze vast gelegd zijn in de WSDL. Frameworks/toolkits kunnen tijdens het inlezen van de WSDL dan al bepalen hoe met de policy elementen omgegaan moet worden en kunnen hiervoor al de voorbereidingen treffen. Bijvoorbeeld: indien op WSDL niveau al aangegeven is dat een bericht gesigned moet worden, kan een framework zoals Apache CXF al de benodigde interceptor registreren die het signing proces afhandelt. Dit gebeurt dan transparant voor de ontwikkelaar.
+WS-Policies is onderdeel van de WS-\* specificaties en is sinds 2007 is versie 1.5 final. De doelstelling van WS-Policies is om een framework aan te bieden waarmee domein specifieke definities in een WSDL opgenomen kunnen worden. Gebaseerd op deze framework kunnen specifieke WS-\* standaarden extensies definiëren op een eenduidig manier. De extensies worden dan in de policy elementen toegevoegd zodat ze vastgelegd zijn in de WSDL. Frameworks/toolkits kunnen tijdens het inlezen van de WSDL dan al bepalen hoe met de policy elementen omgegaan moet worden en kunnen hiervoor al de voorbereidingen treffen. Bijvoorbeeld: indien op WSDL niveau al aangegeven is dat een bericht gesigned moet worden, kan een framework zoals Apache CXF al de benodigde interceptor registreren die het signing proces afhandelt. Dit gebeurt dan transparant voor de ontwikkelaar.
 
-Hoewel de standaarden reeds geruime tijd zijn uitgewerkt en gefinaliseerd, is in de praktijk de implementatie ondersteuning nog wisselvallig. Hierdoor is gekozen om het gebruik van policies niet binnen de koppelvlakstandaard op te nemen maar optioneel te houden. De meerwaarde van het gebruik van policies is daarentegen dusdanig evident dat het binnen de best practices is opgenomen.
+Hoewel de standaarden reeds geruime tijd zijn uitgewerkt en gefinaliseerd, is in de praktijk de implementatie ondersteuning nog wisselvallig. Hierdoor is gekozen om het gebruik van policies niet binnen de koppelvlakstandaard op te nemen, maar optioneel te houden. De meerwaarde van het gebruik van policies is daarentegen dusdanig evident dat het binnen de best practices is opgenomen.
 
 Het gebruik van policies kunnen verschillende zaken zowel versimpelen als verduidelijken in de ontwikkelfase maar zijn niet noodzakelijk om ingezet te worden. In de praktijk blijkt wel dat zaken als signing en encryption zonder policies tijdens het ontwikkelen voor de nodige complexiteit zorgt. Uiteraard is het onderhouden van meerdere WSDL varianten voor dezelfde service niet wenselijk. Daarentegen kan de impact daarvan beperkt worden door te werken met een externe policy file dat in de WSDL wordt geïmporteerd en vervolgens met policy references aan specifieke methodes te koppelen. Door de policies extern te houden, is het zelfs mogelijk om verschillende policy varianten te maken indien een veel gebruikte framework een policy niet interoperabel ondersteund. De kans op implementatie fouten zou hiermee verlaagd kunnen worden wat zal resulteren in een sneller adoptieproces. De baten die hiermee behaald kunnen worden zijn hoogstwaarschijnlijk hoger dan de kosten die ermee gemoeid zijn.
 
-Voorbeeld: Partij A besluit om een melding dienst aan te bieden waar andere partijen zich kunnen abonneren en meldingen kunnen ontvangen. Dit houdt in dat alle partijen de service moeten implementeren om de meldingen te kunnen ontvangen. Indien er 1000 verschillende partijen zijn waarbij het bekend is dat 50% gebruik maakt van Oracle Webcenter technologie en 30% gebruik maakt van Microsoft technologie. Dan zou de case om een policy attachment aan te bieden voor beide technologieën dat getest is op een correcte werking zeer goed te maken zijn. Door het inlezen van de WSDL met de bijbehorende policy attachments staan alle webservice instellingen zoals signing onderdelen gelijk goed.
+Voorbeeld: Partij A besluit om een meldingdienst aan te bieden waar andere partijen zich kunnen abonneren en meldingen kunnen ontvangen. Dit houdt in dat alle partijen de service moeten implementeren om de meldingen te kunnen ontvangen. Indien er 1000 verschillende partijen zijn waarbij het bekend is dat 50% gebruik maakt van Oracle Webcenter technologie en 30% gebruik maakt van Microsoft technologie, dan zou de case om een policy attachment aan te bieden voor beide technologieën dat getest is op een correcte werking zeer goed te maken zijn. Door het inlezen van de WSDL met de bijbehorende policy attachments staan alle webservice instellingen zoals signing onderdelen gelijk goed.
 
