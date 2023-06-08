@@ -92,8 +92,3 @@ Digikoppeling richt zich uitsluitend op de logistieke laag. Deze afspraken komen
 Hoofdstuk 1 bevat een aantal algemene inleidende onderwerpen.
 
 Hoofdstuk 2 bevat aanbevelingen, werkwijzes en Best Practices.
-
-## Gehanteerde terminologie: Digikoppeling Glossary
-
-Voor de definities die binnen het Digikoppeling project gehanteerd worden, zie de ‘Digikoppeling Glossary’ die via Digikoppeling website te vinden is.
-

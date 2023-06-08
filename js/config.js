@@ -5,8 +5,7 @@ var respecConfig = {
       } ],
   authors: [ { 
         "mailto" : "digikoppeling@logius.nl",
-        "name" : "Logius",
-        "url" : "https://logius.nl/standaarden"
+        "name" : "Logius"
       } ],
   editors: [ 
       { 
