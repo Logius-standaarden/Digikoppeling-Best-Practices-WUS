@@ -20,12 +20,12 @@ var respecConfig = {
       }
     ],
   github: "https://github.com/Logius-standaarden/Digikoppeling-Best-Practices-WUS",
-  previousPublishDate: "2017-10-01",
-  previousPublishVersion: "1.10",
+  previousPublishDate: "2022-04-11",
+  previousPublishVersion: "1.10.1",
   pubDomain: "dk",
-  publishDate: "2022-04-11",
-  publishVersion: "1.10.1",
+  publishDate: "2023-06-01",
+  publishVersion: "1.10.2",
   shortName: "bpwus",
-  specStatus: "DEF",
+  specStatus: "WV",
   specType: "BP"
 };
