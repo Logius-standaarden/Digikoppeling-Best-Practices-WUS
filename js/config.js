@@ -23,9 +23,9 @@ var respecConfig = {
   previousPublishDate: "2022-04-11",
   previousPublishVersion: "1.10.1",
   pubDomain: "dk",
-  publishDate: "2023-06-01",
+  publishDate: "2023-07-07",
   publishVersion: "1.10.2",
   shortName: "bpwus",
-  specStatus: "WV",
+  specStatus: "DEF",
   specType: "BP"
 };
