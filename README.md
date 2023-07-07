@@ -1,5 +1,5 @@
 # Digikoppeling Best Practices WUS
 
-- html: https://logius-standaarden.github.io/Digikoppeling-Best-Practices-WUS/
-- html(static): https://logius-standaarden.github.io/Digikoppeling-Best-Practices-WUS/snapshot.html
-- PDF-versie: https://github.com/Logius-standaarden/Digikoppeling-Best-Practices-WUS/blob/master/Digikoppeling-Best-Practices-WUS.pdf
+- Werkversie: https://logius-standaarden.github.io/Digikoppeling-Best-Practices-WUS/
+- Gepubliceerde versie (HTML): https://gitdocumentatie.logius.nl/publicatie/dk/bpwus/
+- Gepubliceerde versie (PDF): https://gitdocumentatie.logius.nl/publicatie/dk/bpwus/Digikoppeling-Best-Practices-WUS.pdf

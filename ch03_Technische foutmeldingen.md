@@ -14,13 +14,13 @@ Bij gegevensuitwisseling kunnen er fouten optreden door verschillende oorzaken. 
 
 Per categorie kan op hoofdlijnen een procedure voor de foutafhandeling gedefinieerd worden.
 
-5. bij syntax fouten dient zo mogelijk aangegeven te worden welk element fout is (zoals in foutmeldingen 0005 t/m 0008 aangegeven staat)
+1. bij syntax fouten dient zo mogelijk aangegeven te worden welk element fout is (zoals in foutmeldingen 0005 t/m 0008 aangegeven staat)
 
-6. Zo mogelijk aangeven waarom. Bij inhoudelijke fouten aangeven dat het bericht vanwege inconsistentie niet verwerkt kan worden. (dit is eigenlijk geen transport/koppelvlak probleem, maar veeleer een business probleem met een bijbehorende afhandelingsprocedure, vgl. de terugmelding in het stelsel).
+2. Zo mogelijk aangeven waarom. Bij inhoudelijke fouten aangeven dat het bericht vanwege inconsistentie niet verwerkt kan worden. (dit is eigenlijk geen transport/koppelvlak probleem, maar veeleer een business probleem met een bijbehorende afhandelingsprocedure, vgl. de terugmelding in het stelsel).
 
 ## Codes
 
-Lijst van technische foutmeldingen met classificatie naar fout-categorieën
+Lijst van technische foutmeldingen met classificatie naar foutcategorieën:
 
 | **Code** | **Omschrijving**                            | **Categorie** | **toelichting**                                                                                     |
 |----------|---------------------------------------------|---------------|-----------------------------------------------------------------------------------------------------|
@@ -28,10 +28,10 @@ Lijst van technische foutmeldingen met classificatie naar fout-categorieën
 | 0002     | Niet geautoriseerd                          | 3             | Service niet beschikbaar (QoS). Door gebrek aan bevoegdheden.                                       |
 | 0003     | Invalide soapaction                         | 1             | De inhoud leidt niet tot een voltooide actie, is niet gedefinieerd of onbegrijpelijk. Protocol fout |
 | 0004     | Niet conform xsd                            | 1             | Voldoet niet aan verwachte syntax                                                                   |
-| 0005     | WS-Addressing header “to” ontbreekt         | 1             | Ontbreekt of voldoet niet aan verwachte syntax                                                      |
-| 0006     | WS-Addressing header “action” ontbreekt     | 1             | Ontbreekt of voldoet niet aan verwachte syntax                                                      |
-| 0007     | WS-Addressing header “messageID” ontbreekt  | 1             | Ontbreekt of voldoet niet aan verwachte syntax                                                      |
-| 0008     | WS-Addressing header “relates to” ontbreekt | 1             | Ontbreekt of voldoet niet aan verwachte syntax                                                      |
+| 0005     | WS-Addressing header `To` ontbreekt         | 1             | Ontbreekt of voldoet niet aan verwachte syntax                                                      |
+| 0006     | WS-Addressing header `Action` ontbreekt     | 1             | Ontbreekt of voldoet niet aan verwachte syntax                                                      |
+| 0007     | WS-Addressing header `MessageID` ontbreekt  | 1             | Ontbreekt of voldoet niet aan verwachte syntax                                                      |
+| 0008     | WS-Addressing header `RelatesTo` ontbreekt | 1             | Ontbreekt of voldoet niet aan verwachte syntax                                                      |
 | 0009     | Niet volgens UTF                            | 1             | Voldoet niet aan verwachte characterset                                                             |
 | 0010     | Headers anders dan WSA-headers              | 1             | Voldoet niet aan verwachte syntax                                                                   |
 | 0011     | Header andere waarde dan voorgeschreven     | 1             | Voldoet niet aan verwachte spec/waarde                                                              |
